@@ -1,0 +1,101 @@
+.routing-3d-wrap {
+  width: 100%;
+  max-width: 560px;
+}
+
+.routing-diagram {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  transform: rotateX(18deg) rotateZ(-2deg);
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+}
+
+.routing-3d-wrap:hover .routing-diagram {
+  transform: rotateX(10deg) rotateZ(-1deg) scale(1.02);
+}
+
+@media (max-width: 880px) {
+  .routing-diagram {
+    transform: rotateX(12deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .routing-diagram,
+  .routing-3d-wrap:hover .routing-diagram {
+    transform: none;
+    transition: none;
+  }
+}
+
+.route-line {
+  stroke: var(--border-strong);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.route-pulse {
+  fill: var(--accent);
+  filter: drop-shadow(0 0 5px var(--accent));
+}
+
+.node-circle {
+  fill: var(--surface-2);
+  stroke: var(--border-strong);
+  stroke-width: 1.5;
+}
+
+.node-label {
+  fill: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.hub-ring {
+  fill: none;
+  stroke: var(--accent-border);
+  stroke-width: 1;
+  animation: pulse-ring 2.6s ease-out infinite;
+}
+
+.hub-circle {
+  fill: var(--accent-dim);
+  stroke: var(--accent);
+  stroke-width: 2;
+  filter: drop-shadow(0 6px 10px rgba(79, 209, 197, 0.25));
+}
+
+.node-circle {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.35));
+}
+
+.hub-label {
+  fill: var(--accent-strong);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+
+@keyframes pulse-ring {
+  0% {
+    r: 34;
+    opacity: 0.9;
+  }
+  100% {
+    r: 58;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hub-ring {
+    animation: none;
+    opacity: 0;
+  }
+  .route-pulse {
+    display: none;
+  }
+}

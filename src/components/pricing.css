@@ -1,0 +1,119 @@
+.pricing-title {
+  font-size: clamp(24px, 3vw, 32px);
+  max-width: 600px;
+  margin-top: 8px;
+}
+
+.pricing-sub {
+  margin-top: 14px;
+  max-width: 560px;
+  font-size: 15px;
+}
+
+.pricing-grid {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 760px;
+}
+
+.pricing-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 30px 26px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card-pro {
+  border-color: var(--pro-border);
+  background: linear-gradient(180deg, var(--pro-dim), var(--surface) 40%);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -12px;
+  left: 26px;
+  background: var(--pro);
+  color: #241a02;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+
+.pricing-plan-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+
+.pricing-price {
+  margin-top: 14px;
+}
+
+.pricing-price-amount {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.pricing-quota {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--accent);
+}
+
+.pricing-features {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.pricing-features li {
+  font-size: 13.5px;
+  color: var(--text-dim);
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.pricing-features li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--accent);
+  opacity: 0.7;
+}
+
+.pricing-cta {
+  margin-top: 26px;
+  width: 100%;
+}
+
+.pricing-note {
+  margin-top: 28px;
+  font-size: 12.5px;
+  color: var(--text-faint);
+  max-width: 640px;
+}
+
+@media (max-width: 720px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+}
